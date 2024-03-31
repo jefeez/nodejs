@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "dotenvx run -- node -r tsconfig-paths/register ./dist/server.js",
-    "dev": "dotenvx run -- tsnd -r tsconfig-paths/register --quiet --exit-child --clear --respawn --transpile-only ./src/server.ts",
+    "start": "dotenvx run --env-file=.env.prod -- node -r tsconfig-paths/register ./dist/server.js",
+    "dev": "dotenvx run --env-file=.env.dev -- tsnd -r tsconfig-paths/register --quiet --exit-child --clear --respawn --transpile-only ./src/server.ts",
     "build": "tsup src",
-    "jest": "dotenvx run -- jest --watch"
+    "jest": "dotenvx run --env-file=.env.test -- jest --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.24.3",
